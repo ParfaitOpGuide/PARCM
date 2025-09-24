@@ -1,0 +1,6 @@
+﻿  test.cpp
+  Generating code
+  Compiler switch has changed, fall back to full compilation.
+  All 1030 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Finished generating code
+  PARCM.vcxproj -> E:\VSC\Y4T1 GDPARCM\PARCM\x64\Release\PARCM.exe

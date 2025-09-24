@@ -1,10 +1,6 @@
-// PARCM.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
-
 #include <iostream>
-
-int main()
-{
-    std::cout << "Hello World!\n";
+#include "BaseRunner.h"
+int main() {
+	BaseRunner runner;
+	runner.run();
 }
-
