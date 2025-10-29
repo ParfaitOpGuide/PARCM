@@ -28,7 +28,7 @@ void TextureManager::loadFromAssetList()
 	std::ifstream stream("Media/assets.txt");
 	String path;
 
-	while(std::getline(stream, path))
+	while (std::getline(stream, path))
 	{
 		std::vector<String> tokens = StringUtils::split(path, '/');
 		String assetName = StringUtils::split(tokens[tokens.size() - 1], '.')[0];
@@ -40,18 +40,20 @@ void TextureManager::loadFromAssetList()
 void TextureManager::loadSingleStreamAsset(int index)
 {
 	int fileNum = 0;
-	
+
 	for (const auto& entry : std::filesystem::directory_iterator(STREAMING_PATH)) {
-		if(index == fileNum)
+		if (index == fileNum)
 		{
 			//simulate loading of very large file
 			//<code here for thread sleeping. Fill this up only when instructor told so.>
+			//IETThread::sleep(200);
 
-			
 			//<code here for loading asset>
-			String assetName = "";
-	
-			std::cout << "[TextureManager] Loaded streaming texture: " << assetName << std::endl;
+			auto filePath = entry.path();
+			std::cout << filePath.filename() << std::endl;
+			this->instantiateAsTexture(filePath.string(), filePath.filename().string(), true);
+
+			std::cout << "[TextureManager] Loaded streaming texture: " << filePath.filename().string() << std::endl;
 			break;
 		}
 
@@ -106,7 +108,7 @@ void TextureManager::instantiateAsTexture(String path, String assetName, bool is
 	texture->loadFromFile(path);
 	this->textureMap[assetName].push_back(texture);
 
-	if(isStreaming)
+	if (isStreaming)
 	{
 		this->streamTextureList.push_back(texture);
 	}
@@ -114,5 +116,5 @@ void TextureManager::instantiateAsTexture(String path, String assetName, bool is
 	{
 		this->baseTextureList.push_back(texture);
 	}
-	
+
 }
