@@ -1,7 +1,7 @@
 ﻿  main.cpp
   Generating code
-  14 of 305 functions ( 4.6%) were compiled, the rest were copied from previous compilation.
-    0 functions were new in current compilation
-    0 functions had inline decision re-evaluated but remain unchanged
+  1385 of 1498 functions (92.5%) were compiled, the rest were copied from previous compilation.
+    1 functions were new in current compilation
+    24 functions had inline decision re-evaluated but remain unchanged
   Finished generating code
   PARCM.vcxproj -> E:\VSC\Y4T1 GDPARCM\PARCM\x64\Release\PARCM.exe
