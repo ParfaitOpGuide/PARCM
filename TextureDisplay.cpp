@@ -5,9 +5,9 @@
 #include "GameObjectManager.h"
 #include "IconObject.h"
 #include "LoadAssetThread.h"
-TextureDisplay::TextureDisplay(): AGameObject("TextureDisplay")
+TextureDisplay::TextureDisplay() : AGameObject("TextureDisplay")
 {
-	
+
 }
 
 void TextureDisplay::initialize()
@@ -17,25 +17,38 @@ void TextureDisplay::initialize()
 
 void TextureDisplay::processInput(sf::Event event)
 {
-	
+
 }
 
 void TextureDisplay::update(sf::Time deltaTime)
 {
 	this->ticks += BaseRunner::TIME_PER_FRAME.asMilliseconds();
-	
+
 	//<code here for spawning icon object periodically>
-	
+
 	ticks += deltaTime.asMilliseconds();
 
 	if (ticks > STREAMING_LOAD_DELAY) {
-		int texCount = TextureManager::getInstance()->getNumLoadedStreamTextures();
+		if (streamingType == SINGLE_STREAM) {
+			int texCount = TextureManager::getInstance()->getNumLoadedStreamTextures();
 
-		if (texCount < 200) {
-			LoadAssetThread* asset = new LoadAssetThread(texCount, this);
-			threadPool.ScheduleTask(asset);
+			if (texCount < 200) {
+				LoadAssetThread* asset = new LoadAssetThread(texCount, this);
+				threadPool.ScheduleTask(asset);
+			}
+
+
 		}
-
+		else { // batch loading
+			static int texCount = 0;
+			static int limit = 50;
+			for (; texCount < limit; texCount++) {
+				LoadAssetThread* asset = new LoadAssetThread(texCount, this);
+				threadPool.ScheduleTask(asset);
+			}
+			limit += 50;
+			std::cout << limit << std::endl;
+		}
 		ticks = 0;
 	}
 
@@ -63,7 +76,7 @@ void TextureDisplay::spawnObject()
 	std::cout << "Set position: " << x << " " << y << std::endl;
 
 	this->columnGrid++;
-	if(this->columnGrid == this->MAX_COLUMN)
+	if (this->columnGrid == this->MAX_COLUMN)
 	{
 		this->columnGrid = 0;
 		this->rowGrid++;

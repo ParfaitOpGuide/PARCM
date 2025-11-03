@@ -22,7 +22,7 @@ private:
 	void OnFinishedTask(int id) override;
 
 	bool isRunning = false;
-	int workerCount = 1;
+	int workerCount = 12;
 
 	std::queue<IWorkerAction*> PendingTasks;
 	std::unordered_map<int, WorkerThread*> ActiveThreads;
