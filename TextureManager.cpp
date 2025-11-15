@@ -53,7 +53,7 @@ void TextureManager::loadSingleStreamAsset(int index)
 			std::cout << filePath.filename() << std::endl;
 			this->instantiateAsTexture(filePath.string(), filePath.filename().string(), true);
 
-			std::cout << "[TextureManager] Loaded streaming texture: " << filePath.filename().string() << std::endl;
+			//std::cout << "[TextureManager] Loaded streaming texture: " << filePath.filename().string() << std::endl;
 			break;
 		}
 

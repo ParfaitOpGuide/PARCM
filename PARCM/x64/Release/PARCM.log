@@ -1,7 +1,12 @@
-﻿  main.cpp
+﻿  BaseRunner.cpp
+  TextureDisplay.cpp
+E:\VSC\Y4T1 GDPARCM\PARCM\TextureDisplay.cpp(67,70): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+E:\VSC\Y4T1 GDPARCM\PARCM\TextureDisplay.cpp(72,10): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+E:\VSC\Y4T1 GDPARCM\PARCM\TextureDisplay.cpp(73,10): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+  ThreadPool.cpp
   Generating code
-  14 of 305 functions ( 4.6%) were compiled, the rest were copied from previous compilation.
+  1 of 1503 functions (<0.1%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
-    0 functions had inline decision re-evaluated but remain unchanged
+    1 functions had inline decision re-evaluated but remain unchanged
   Finished generating code
-  PARCM.vcxproj -> E:\VSC\Y4T1 GDPARCM\PARCM\x64\Release\PARCM.exe
+LINK : fatal error LNK1104: cannot open file 'PARCM\x64\Release\PARCM.iobj'
