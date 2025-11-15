@@ -30,11 +30,12 @@ void TextureDisplay::update(sf::Time deltaTime)
 
 	if (ticks > STREAMING_LOAD_DELAY) {
 		if (streamingType == SINGLE_STREAM) {
-			int texCount = TextureManager::getInstance()->getNumLoadedStreamTextures();
+			static int texCount = 0;
 
 			if (texCount < 200) {
 				LoadAssetThread* asset = new LoadAssetThread(texCount, this);
 				threadPool.ScheduleTask(asset);
+				texCount++;
 			}
 
 

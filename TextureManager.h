@@ -1,6 +1,7 @@
 #pragma once
 #include <unordered_map>
 #include "SFML/Graphics.hpp"
+#include <semaphore>
 
 class TextureManager
 {
@@ -24,6 +25,9 @@ private:
 	TextureManager(TextureManager const&) {};             // copy constructor is private
 	TextureManager& operator=(TextureManager const&) {};  // assignment operator is private
 	static TextureManager* sharedInstance;
+
+	std::binary_semaphore mute{ 1 };
+	int loaded = 0;
 
 	HashTable textureMap;
 	TextureList baseTextureList;

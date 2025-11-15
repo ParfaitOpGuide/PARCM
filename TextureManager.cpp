@@ -46,14 +46,19 @@ void TextureManager::loadSingleStreamAsset(int index)
 		{
 			//simulate loading of very large file
 			//<code here for thread sleeping. Fill this up only when instructor told so.>
-			//IETThread::sleep(200);
+			IETThread::sleep(200);
 
 			//<code here for loading asset>
 			auto filePath = entry.path();
 			std::cout << filePath.filename() << std::endl;
 			this->instantiateAsTexture(filePath.string(), filePath.filename().string(), true);
 
+			mute.acquire();
 			//std::cout << "[TextureManager] Loaded streaming texture: " << filePath.filename().string() << std::endl;
+			loaded++;
+			std::cout << "Loaded " << loaded << std::endl;
+			mute.release();
+
 			break;
 		}
 
