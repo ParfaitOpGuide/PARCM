@@ -147,6 +147,7 @@
     <ClCompile Include="LoadAssetThread.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MathUtils.cpp" />
+    <ClCompile Include="OverlayManager.cpp" />
     <ClCompile Include="StringUtils.cpp" />
     <ClCompile Include="test.cpp" />
     <ClCompile Include="TextureDisplay.cpp" />
@@ -169,6 +170,7 @@
     <ClInclude Include="IWorkerAction.h" />
     <ClInclude Include="LoadAssetThread.h" />
     <ClInclude Include="MathUtils.h" />
+    <ClInclude Include="OverlayManager.h" />
     <ClInclude Include="StringUtils.h" />
     <ClInclude Include="TextureDisplay.h" />
     <ClInclude Include="TextureManager.h" />

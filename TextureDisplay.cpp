@@ -32,7 +32,7 @@ void TextureDisplay::update(sf::Time deltaTime)
 		if (streamingType == SINGLE_STREAM) {
 			static int texCount = 0;
 
-			if (texCount < 200) {
+			if (texCount < 50) {
 				LoadAssetThread* asset = new LoadAssetThread(texCount, this);
 				threadPool.ScheduleTask(asset);
 				texCount++;

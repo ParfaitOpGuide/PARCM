@@ -4,6 +4,7 @@
 #include "TextureManager.h"
 #include "TextureDisplay.h"
 #include "FPSCounter.h"
+#include "OverlayManager.h"
 
 /// <summary>
 /// This demonstrates a running parallax background where after X seconds, a batch of assets will be streamed and loaded.
@@ -24,6 +25,9 @@ BaseRunner::BaseRunner() :
 
 	FPSCounter* fpsCounter = new FPSCounter();
 	GameObjectManager::getInstance()->addObject(fpsCounter);
+
+	//changes here
+	OverlayManager::getInstance()->loadLoading();
 }
 
 void BaseRunner::run() {
@@ -63,10 +67,16 @@ void BaseRunner::processEvents()
 
 void BaseRunner::update(sf::Time elapsedTime) {
 	GameObjectManager::getInstance()->update(elapsedTime);
+	OverlayManager::getInstance()->update();
 }
 
 void BaseRunner::render() {
 	this->window.clear();
 	GameObjectManager::getInstance()->draw(&this->window);
+
+	//changes here
+	if (OverlayManager::getInstance()->getIsLoading() == true) {
+		OverlayManager::getInstance()->draw(&this->window);
+	}
 	this->window.display();
 }

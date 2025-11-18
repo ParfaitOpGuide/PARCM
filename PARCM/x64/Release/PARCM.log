@@ -1,17 +1,15 @@
-﻿  BGObject.cpp
-  BaseRunner.cpp
-  IconObject.cpp
-  LoadAssetThread.cpp
+﻿  BaseRunner.cpp
+  OverlayManager.cpp
   TextureDisplay.cpp
 E:\VSC\Y4T1 GDPARCM\PARCM\TextureDisplay.cpp(68,70): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
 E:\VSC\Y4T1 GDPARCM\PARCM\TextureDisplay.cpp(73,10): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
 E:\VSC\Y4T1 GDPARCM\PARCM\TextureDisplay.cpp(74,10): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
   TextureManager.cpp
-E:\VSC\Y4T1 GDPARCM\PARCM\TextureManager.cpp(83,42): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
-E:\VSC\Y4T1 GDPARCM\PARCM\TextureManager.cpp(98,37): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+E:\VSC\Y4T1 GDPARCM\PARCM\TextureManager.cpp(85,42): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+E:\VSC\Y4T1 GDPARCM\PARCM\TextureManager.cpp(100,37): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
   Generating code
-  8 of 1565 functions ( 0.5%) were compiled, the rest were copied from previous compilation.
-    0 functions were new in current compilation
-    55 functions had inline decision re-evaluated but remain unchanged
+  12 of 1573 functions ( 0.8%) were compiled, the rest were copied from previous compilation.
+    1 functions were new in current compilation
+    5 functions had inline decision re-evaluated but remain unchanged
   Finished generating code
   PARCM.vcxproj -> E:\VSC\Y4T1 GDPARCM\PARCM\x64\Release\PARCM.exe

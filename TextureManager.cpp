@@ -4,6 +4,7 @@
 #include "TextureManager.h"
 #include "StringUtils.h"
 #include "IETThread.h"
+#include "OverlayManager.h"
 
 //a singleton class
 TextureManager* TextureManager::sharedInstance = NULL;
@@ -56,7 +57,8 @@ void TextureManager::loadSingleStreamAsset(int index)
 			mute.acquire();
 			//std::cout << "[TextureManager] Loaded streaming texture: " << filePath.filename().string() << std::endl;
 			loaded++;
-			std::cout << "Loaded " << loaded << std::endl;
+			if (loaded > 30)
+				OverlayManager::getInstance()->setFade(5);
 			mute.release();
 
 			break;
